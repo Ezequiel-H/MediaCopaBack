@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import { schema as Schema, mongoose } from "../db.js";
 
 export const schema = new Schema(

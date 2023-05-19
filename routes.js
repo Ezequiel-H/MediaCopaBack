@@ -1,6 +1,3 @@
-/* eslint-disable import/extensions */
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable import/no-cycle */
 import { createUser } from "./controllers/user.js";
 
 export default (app) => {
