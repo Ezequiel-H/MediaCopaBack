@@ -5,11 +5,7 @@ import { schema as addressSchema } from "./address.js";
 export const schema = new Schema(
   {
     meetingAddress: addressSchema,
-    addesses: [addressSchema],
-    type: {
-      type: String,
-      enum: Object.values(PLACES_KEYS),
-    },
+    addresses: [addressSchema],
   },
   { timestamps: true }
 );
