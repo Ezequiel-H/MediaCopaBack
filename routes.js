@@ -1,4 +1,5 @@
 import { createAddress } from "./controllers/addresses.js";
+import { getHistorial } from "./controllers/historial.js";
 import { getMeeting } from "./controllers/meeting.js";
 import { createUser } from "./controllers/user.js";
 
@@ -11,10 +12,7 @@ export default (app) => {
 
   app.post("/address", createAddress);
 
-  app.get("/historial", (req, res) => {
-    console.log("Got a GET request for /list_user");
-    res.send("Page Listing");
-  });
+  app.get("/historial", getHistorial);
 
   // PATCH
   app.delete("/historial", (req, res) => {
@@ -22,7 +20,7 @@ export default (app) => {
     res.send("Page Listing");
   });
 
-  app.get("/punto_medio", getMeeting);
+  app.post("/punto_medio", getMeeting);
 
   app.get("/punto_medio/:id", (req, res) => {
     console.log("Got a GET request for /list_user");

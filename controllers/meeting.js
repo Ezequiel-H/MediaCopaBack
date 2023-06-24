@@ -1,6 +1,7 @@
 import { PLACES_KEYS } from "../constants/places.js";
 import { mapBodyToMeeting } from "../mappers/meeting.js";
 import Address from "../models/address.js";
+import Meeting from "../models/meeting.js";
 
 export const getMeeting = async (req, res) => {
   // TODO: agregar al historial del usuario
@@ -14,6 +15,10 @@ export const getMeeting = async (req, res) => {
   } else {
     meetingAddress = await Address.create(geoMiddlePoint);
   }
+  await Meeting.create({
+    meetingAddress: meetingAddress,
+    addresses: addresses,
+  });
   res.send(meetingAddress);
 };
 
