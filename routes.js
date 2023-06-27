@@ -1,5 +1,5 @@
 import { createAddress } from "./controllers/addresses.js";
-import { getHistorial } from "./controllers/historial.js";
+import { deleteFromHistorial, getHistorial } from "./controllers/historial.js";
 import { getMeeting } from "./controllers/meeting.js";
 import { createUser } from "./controllers/user.js";
 
@@ -15,10 +15,7 @@ export default (app) => {
   app.get("/historial", getHistorial);
 
   // PATCH
-  app.delete("/historial", (req, res) => {
-    console.log("obtener el array de ids");
-    res.send("Page Listing");
-  });
+  app.delete("/historial/:id", deleteFromHistorial);
 
   app.post("/punto_medio", getMeeting);
 
